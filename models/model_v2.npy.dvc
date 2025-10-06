@@ -1,0 +1,5 @@
+outs:
+- md5: aab8cd5486db2d8e82ca163c11055eea
+  size: 7182562
+  hash: md5
+  path: model_v2.npy

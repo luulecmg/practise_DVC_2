@@ -18,7 +18,7 @@ x_test_flat = x_test.reshape(x_test.shape[0], -1) / 255.0
 print(f"Training on {len(x_train)} samples...")
 
 # Simple model
-model = RandomForestClassifier(n_estimators=10, max_depth=10, random_state=42)
+model = RandomForestClassifier(n_estimators=30, max_depth=10, random_state=42)
 model.fit(x_train_flat, y_train)
 
 # Evaluate
@@ -29,14 +29,14 @@ print(f"Accuracy: {accuracy:.4f}")
 
 # Save model and metrics
 os.makedirs('models', exist_ok=True)
-np.save('models/model_v1.npy', model)
+np.save('models/model_v2.npy', model)
 
 metrics = {
     'accuracy': float(accuracy),
     'dataset_size': len(x_train),
-    'dataset_version': 'v1.0'
+    'dataset_version': 'v2.0'
 }
-with open('models/metrics_v1.json', 'w') as f:
+with open('models/metrics_v2.json', 'w') as f:
     json.dump(metrics, f, indent=2)
 
 print("Model and metrics saved!")
